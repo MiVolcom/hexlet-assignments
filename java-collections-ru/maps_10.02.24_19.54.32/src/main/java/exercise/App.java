@@ -9,14 +9,14 @@ import java.util.stream.Collectors;
 class App {
     public static Map getWordCount(String sentence) {
         Map<String, Integer> result = new HashMap<>();
-        if (sentence.equals("") ) {
+        if (sentence.equals("")) {
             return result;
         }
         String[] wordsArray = sentence.split(" ");
 
-        for (String word: wordsArray) {
+        for (String word : wordsArray) {
             var count = result.getOrDefault(word, 0);
-            result.put(word, count +1);
+            result.put(word, count + 1);
         }
         return result;
         }
