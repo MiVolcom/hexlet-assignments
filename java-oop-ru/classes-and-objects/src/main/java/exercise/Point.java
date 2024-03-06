@@ -1,5 +1,4 @@
 package exercise;
-import exercise.Segment;
 
 // BEGIN
 public class Point {
