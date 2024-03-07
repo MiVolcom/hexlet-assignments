@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ReversedTest {
     @Test
-    public void TestReversed() {
+    public void testReversed() {
         CharSequence text = new ReversedSequence("abcdef");
         var expected = "fedcba";
         String actual = text.toString();

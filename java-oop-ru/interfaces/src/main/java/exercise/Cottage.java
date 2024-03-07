@@ -21,7 +21,8 @@ public class Cottage implements Home {
             return 1;
         } else if (this.area < another.getArea()) {
             return -1;
-        } return 0;
+        }
+        return 0;
     }
 
     @Override
