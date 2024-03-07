@@ -27,8 +27,8 @@ public class Flat implements Home {
 
     @Override
     public String toString() {
-        return "\" " + "Квартира площадью " + (area + balconyArea)
-                + " на " + floor + " этаже" + " \"";
+        return "Квартира площадью " + (area + balconyArea) +
+                " на " + floor + " этаже";
     }
     public int compareTo(Home another) {
         if (this.area > another.getArea()) {
