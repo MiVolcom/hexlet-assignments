@@ -10,18 +10,18 @@ public class ReversedSequence implements CharSequence {
 
     @Override
     public int length() {
-        return str.length();
+        return text.length();
     }
 
     @Override
     public char charAt(int index) {
-        char[] chars = str.toCharArray();
+        char[] chars = text.toCharArray();
         return chars[index];
     }
 
     @Override
     public String subSequence(int start, int end) {
-        char[] chars = str.toCharArray();
+        char[] chars = text.toCharArray();
         String result = "";
         for (var i = start; i < end; i++) {
             result = result + chars[i];
