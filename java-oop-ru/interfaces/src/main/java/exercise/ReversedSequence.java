@@ -15,26 +15,17 @@ public class ReversedSequence implements CharSequence {
 
     @Override
     public char charAt(int index) {
-        char[] chars = text.toCharArray();
-        return chars[index];
+        return text.charAt(index);
     }
 
     @Override
-    public String subSequence(int start, int end) {
-        char[] chars = text.toCharArray();
-        String result = "";
-        for (var i = start; i < end; i++) {
-            result = result + chars[i];
-        }
-        return result;
+    public CharSequence subSequence(int start, int end) {
+        return text.subSequence(start, end);
     }
-    public String toString(String str) {
-        char[] chars = str.toCharArray();
-        String result = "";
-        for (int i = chars.length - 1; i >= 0; i--) {
-            result = result + chars[i];
-        }
-        return result;
+
+    public static String toString(String text) {
+        StringBuilder builder = new StringBuilder(text);
+        return builder.reverse().toString();
     }
 }
 // END
