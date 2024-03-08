@@ -4,8 +4,8 @@ package exercise;
 public class ReversedSequence implements CharSequence {
     private String text;
 
-    public ReversedSequence(String str) {
-        this.str = str;
+    public ReversedSequence(String text) {
+        this.text = text;
     }
 
     @Override
