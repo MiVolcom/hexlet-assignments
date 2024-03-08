@@ -58,11 +58,10 @@ class AppTest {
 
     // BEGIN
     @Test
-    public void testReversed() {
-        void testReversedSequence() {
-            String result = "ayn";
-            String expected = ReversedSequence.toString("nya");
-            assertThat(result).isEqualTo(expected);
+    void testReversedSequence() {
+        String result = "ayn";
+        String expected = ReversedSequence.toString("nya");
+        assertThat(result).isEqualTo(expected);
     }
     // END
 }
