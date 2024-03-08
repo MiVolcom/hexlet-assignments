@@ -2,7 +2,7 @@ package exercise;
 
 // BEGIN
 public class ReversedSequence implements CharSequence {
-    private String str;
+    private String text;
 
     public ReversedSequence(String str) {
         this.str = str;
