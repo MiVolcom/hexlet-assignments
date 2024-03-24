@@ -42,5 +42,6 @@ class FileKVTest {
 
         assertThat(file.get("key", "default")).isEqualTo("default");
         assertThat(file.toMap()).isEqualTo(Map.of("key2", "value2"));
-    // END
+        // END
+    }
 }
