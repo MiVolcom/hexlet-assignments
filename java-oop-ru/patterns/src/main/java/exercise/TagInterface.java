@@ -2,6 +2,6 @@ package exercise;
 
 // BEGIN
 public interface TagInterface {
-    public String render();
+    String render();
 }
 // END
