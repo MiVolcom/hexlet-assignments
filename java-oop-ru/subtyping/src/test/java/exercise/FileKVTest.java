@@ -30,7 +30,7 @@ public class TestFileVK {
     // BEGIN
     @Test
     public void fileKVTest() {
-        KeyValueStorage file = new FileKV(Path.of("src/test/resources/file"), Map.of());
+        KeyValueStorage file = new FileKV(("src/test/resources/file"), Map.of());
         file.set("key", "value");
         file.set("key2", "value2");
 

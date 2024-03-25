@@ -6,8 +6,9 @@ import java.util.Map;
 // BEGIN
 public class FileKV implements KeyValueStorage {
     private String path;
+
     public fileKV(String path, Map<String, String> map) {
-        this.path = file.toString();
+        this.path = path;
         map.entrySet().forEach(entry -> set(entry.getKey(), entry.getValue()));
     }
 
