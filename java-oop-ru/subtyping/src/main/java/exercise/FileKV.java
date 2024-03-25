@@ -6,11 +6,11 @@ import java.util.Map;
 // BEGIN
 public class FileKV implements KeyValueStorage {
     private String path;
-    private Map<String, String> dictionary;
+    private Map<String, String> map;
 
-    public FileKV(String path, Map<String, String> dictionary) {
-        this.path = path;
-        this.dictionary = dictionary;
+    public FileKV(Path file, Map<String, String> map) {
+        this.path = file.toString();
+        map.entrySet().forEach(entry -> set(entry.getKey(), entry.getValue()));
     }
 
     @Override

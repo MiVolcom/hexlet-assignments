@@ -16,7 +16,7 @@ import java.util.Map;
 // END
 
 
-class FileKVTest {
+public class TestFileVK {
 
     private static Path filepath = Paths.get("src/test/resources/file").toAbsolutePath().normalize();
 
@@ -29,8 +29,8 @@ class FileKVTest {
 
     // BEGIN
     @Test
-    public void fileKVTest() {
-        KeyValueStorage file = new FileKV("src/test/resources/file", Map.of());
+    public void FileKVTest() {
+        KeyValueStorage file = new FileKV(Path.of("src/test/resources/file"), Map.of());
         file.set("key", "value");
         file.set("key2", "value2");
 
@@ -41,6 +41,6 @@ class FileKVTest {
 
         assertThat(file.get("key", "default")).isEqualTo("default");
         assertThat(file.toMap()).isEqualTo(Map.of("key2", "value2"));
-        // END
+
     }
 }
