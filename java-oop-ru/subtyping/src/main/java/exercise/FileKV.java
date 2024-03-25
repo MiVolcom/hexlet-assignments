@@ -8,7 +8,7 @@ public class FileKV implements KeyValueStorage {
     private String path;
     private Map<String, String> map;
 
-    public FileKV(Path file, Map<String, String> map) {
+    public fileKV(Path file, Map<String, String> map) {
         this.path = file.toString();
         map.entrySet().forEach(entry -> set(entry.getKey(), entry.getValue()));
     }
