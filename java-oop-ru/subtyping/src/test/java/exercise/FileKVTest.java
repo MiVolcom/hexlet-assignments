@@ -16,7 +16,7 @@ import java.util.Map;
 // END
 
 
-public class TestFileVK {
+class TestFileVK {
 
     private static Path filepath = Paths.get("src/test/resources/file").toAbsolutePath().normalize();
 
