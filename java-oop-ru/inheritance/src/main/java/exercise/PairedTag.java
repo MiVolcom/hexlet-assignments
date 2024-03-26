@@ -1,32 +1,28 @@
 package exercise;
 
 import java.util.Map;
-import java.util.List;
+import java.util.stream.Collectors;
 
 // BEGIN
-public class PairedTag extends Tag {
-    String body;
-    List<Tag> children;
+class PairedTag extends Tag {
 
-    public PairedTag(String name, Map<String, String> attributes, String body, List<Tag> children) {
+    private String body;
+    private List<Tag> children;
+
+    PairedTag(String name, Map<String, String> attributes, String body, List<Tag> children) {
         super(name, attributes);
         this.body = body;
         this.children = children;
     }
 
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("<" + name);
-        for (Map.Entry<String, String> attribute : attributes.entrySet()) {
-            stringBuilder.append(" " + attribute.getKey() + "=\"" + attribute.getValue() + "\"");
-        }
-        stringBuilder.append(">");
-        for (var child : children) {
-            stringBuilder.append(child.toString());
-        }
-        stringBuilder.append(body + "</" + name + ">");
+        String attributes = stringifyAttributes();
+        String name = getName();
+        String value = children.stream()
+                .map(Object::toString)
+                .collect(Collectors.joining(""));
 
-        return stringBuilder.toString();
+        return String.format("<%s%s>%s%s</%s>", name, attributes, body, value, name);
     }
 }
 // END
