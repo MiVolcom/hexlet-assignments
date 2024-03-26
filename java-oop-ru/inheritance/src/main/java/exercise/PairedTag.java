@@ -23,7 +23,7 @@ public class PairedTag extends Tag {
         for (var child : children) {
             stringBuilder.append(child.toString());
         }
-        stringBuilder.append(body + "</" + name + ">");
+        stringBuilder.append(">" + body + "</" + name + ">");
 
         return stringBuilder.toString();
     }
