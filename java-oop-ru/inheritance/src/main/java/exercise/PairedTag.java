@@ -20,10 +20,11 @@ public class PairedTag extends Tag {
         for (Map.Entry<String, String> attribute : attributes.entrySet()) {
             stringBuilder.append(" " + attribute.getKey() + "=\"" + attribute.getValue() + "\"");
         }
+        stringBuilder.append(">");
         for (var child : children) {
             stringBuilder.append(child.toString());
         }
-        stringBuilder.append(">" + body + "</" + name + ">");
+        stringBuilder.append(body + "</" + name + ">");
 
         return stringBuilder.toString();
     }
