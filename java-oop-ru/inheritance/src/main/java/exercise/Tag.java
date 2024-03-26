@@ -11,6 +11,6 @@ public abstract class Tag {
         this.name = name;
         this.attributes = attributes;
     }
-    public abstract String tooString();
+    public abstract String toString();
 }
 // END

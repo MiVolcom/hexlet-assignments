@@ -9,7 +9,7 @@ public class SingleTag extends Tag {
     }
 
 
-    public String tooString() {
+    public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<" + name);
         for (Map.Entry<String, String> attribute : attributes.entrySet()) {

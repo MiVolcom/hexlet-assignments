@@ -2,7 +2,6 @@ package exercise;
 
 import java.util.Map;
 import java.util.List;
-import java.util.ArrayList;
 
 // BEGIN
 public class PairedTag extends Tag {
@@ -15,14 +14,14 @@ public class PairedTag extends Tag {
         this.children = children;
     }
 
-    public String tooString() {
+    public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<" + name);
         for (Map.Entry<String, String> attribute : attributes.entrySet()) {
             stringBuilder.append(" " + attribute.getKey() + "=\"" + attribute.getValue() + "\"" + ">" + body);
         }
         for (var child : children) {
-            stringBuilder.append(child.tooString());
+            stringBuilder.append(child.toString());
         }
         stringBuilder.append("</" + name + ">");
 
