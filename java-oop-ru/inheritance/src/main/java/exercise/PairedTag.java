@@ -18,12 +18,12 @@ public class PairedTag extends Tag {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<" + name);
         for (Map.Entry<String, String> attribute : attributes.entrySet()) {
-            stringBuilder.append(" " + attribute.getKey() + "=\"" + attribute.getValue() + "\"" + ">" + body);
+            stringBuilder.append(" " + attribute.getKey() + "=\"" + attribute.getValue() + "\"" + ">");
         }
         for (var child : children) {
             stringBuilder.append(child.toString());
         }
-        stringBuilder.append("</" + name + ">");
+        stringBuilder.append(body + "</" + name + ">");
 
         return stringBuilder.toString();
     }
