@@ -2,6 +2,7 @@ package exercise;
 
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.List;
 
 // BEGIN
 class PairedTag extends Tag {
