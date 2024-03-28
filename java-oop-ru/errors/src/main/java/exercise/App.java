@@ -2,7 +2,7 @@ package exercise;
 
 // BEGIN
 public class App {
-    public static printSquare(Circle circle) {
+    public static void printSquare(Circle circle) {
         try {
             System.out.println(circle.getSquare());
         } catch (NegativeRadiusException e) {
