@@ -17,7 +17,7 @@ public class Circle {
         if (radius < 0) {
             throw new NegativeRadiusException("Radius:" + radius + "cannot be negative");
         }
-        return double = Math.PI * (radius * radius);
+        return Math.PI * (radius * radius);
     }
 
 
