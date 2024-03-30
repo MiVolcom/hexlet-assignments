@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
 
 
@@ -37,6 +38,5 @@ class ValidationTest {
         expected1.put("street", List.of("can not be null"));
         assertThat((result1)).isEqualTo(expected1);
     }
-    
     // END
 }
