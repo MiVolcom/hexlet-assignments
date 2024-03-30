@@ -21,8 +21,10 @@ public class Validator {
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
-        } return nullList;
+        }
+        return nullList;
     }
+
     public static Map<String, List<String>> advancedValidate(Address address) {
         Map<String, List<String>> result = new HashMap<>();
         for (Field field : address.getClass().getDeclaredFields()) {
@@ -44,6 +46,8 @@ public class Validator {
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
-        } return result;
+        }
+        return result;
     }
+}
 // END
