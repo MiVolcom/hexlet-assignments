@@ -11,8 +11,10 @@ public class App {
         String content = Car.serialize(car);
         Files.writeString(path, content, StandardOpenOption.WRITE);
     }
+
     public static Car extract(Path path) throws IOException {
         String content = Files.readString(path);
         return Car.unserialize(content);
     }
+}
 // END
