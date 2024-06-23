@@ -4,7 +4,6 @@ package exercise;
 import io.javalin.Javalin;
 // END
 
-import io.javalin.Javalin;
 
 public final class App {
 
