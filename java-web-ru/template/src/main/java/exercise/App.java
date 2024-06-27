@@ -8,7 +8,6 @@ import exercise.dto.users.UserPage;
 import exercise.dto.users.UsersPage;
 import static io.javalin.rendering.template.TemplateUtil.model;
 import io.javalin.rendering.template.JavalinJte;
-import java.util.Optional;
 
 public final class App {
 
