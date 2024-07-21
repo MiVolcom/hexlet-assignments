@@ -43,7 +43,8 @@ public class UsersController {
             ctx.redirect(NamedRoutes.buildUserPath());
             return;
         }
-        ctx.render("users/show.jte", Collections.singletonMap("user", user));
+        var page = new UserPage(user);
+        ctx.render("users/show.jte", model("page", page));
     }
     // END
 }
