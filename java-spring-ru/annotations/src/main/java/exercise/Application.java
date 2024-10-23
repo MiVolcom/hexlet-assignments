@@ -14,23 +14,15 @@ public class Application {
         for (Method method : Address.class.getDeclaredMethods()) {
             if (method.isAnnotationPresent(Inspect.class)) {
                 var name = method.getName();
-                var type = method.getReturnType().toString();
+                var type = method.getReturnType().getSimpleName();
 
                 try {
                     method.invoke(address);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                String regex = "java\\.lang\\.[A-Z][a-zA-Z]*";
-                Pattern pattern = Pattern.compile(regex);
-                Matcher matcher = pattern.matcher(type);
-                String matched = "";
-                String result = type;
-                while (matcher.find()) {
-                    matched = matcher.group();
-                    result = matched.replace("java.lang.", "");
-                }
-                System.out.println("Method " + name + " returns a value of type " +  result + ".");
+
+                System.out.println("Method " + name + " returns a value of type " +  type + ".");
             }
         }
         // END
