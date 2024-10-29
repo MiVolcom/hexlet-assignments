@@ -41,6 +41,7 @@ public class PeopleController {
         return person;
     }
 
+
     @DeleteMapping("/{id}")
     public void destroy(@PathVariable long id) {
         personRepository.deleteById(id);
