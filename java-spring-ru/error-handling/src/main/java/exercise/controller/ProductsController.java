@@ -54,7 +54,7 @@ public class ProductsController {
                 .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found."));
         product.setTitle(data.getTitle());
         product.setPrice(data.getPrice());
-        return productRepository.save(data);
+        return productRepository.save(product);
     }
 
 
