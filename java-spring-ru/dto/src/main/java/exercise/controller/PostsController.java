@@ -22,46 +22,44 @@ public class PostsController {
 
     @Autowired
     private PostRepository postRepository;
+
     @Autowired
-    private CommentRepository commentRepository;
+    private CommentRepository commentsRepository;
 
     @GetMapping(path = "")
     public List<PostDTO> index() {
         var posts = postRepository.findAll();
         var result = posts.stream()
-                .map(this::toDTO)
+                .map(this::toPostDTO)
                 .toList();
         return result;
-    }
-
-    private PostDTO toDTO(Post post) {
-        var dto = new PostDTO();
-        dto.setId(post.getId());
-        dto.setTitle(post.getTitle());
-        dto.setBody(post.getBody());
-        dto.setComments(toCommentsDTO(commentRepository.findByPostId(post.getId())));
-        return dto;
     }
 
     @GetMapping(path = "/{id}")
     public PostDTO show(@PathVariable long id) {
+
         var post =  postRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Post with id " + id + " not found"));
 
-        var dto = new PostDTO();
-        var result = toDTO(post);
-        return result;
+        return toPostDTO(post);
     }
-    private List<CommentDTO> toCommentsDTO(List<Comment> comments) {
-        var dto = new CommentDTO();
-        var result = comments.stream()
-                .map(comment -> {
-                    dto.setId(comment.getId());
-                    dto.setBody(comment.getBody());
-                    return dto;
+
+    private PostDTO toPostDTO(Post post) {
+        var dto = new PostDTO();
+        dto.setId(post.getId());
+        dto.setTitle(post.getTitle());
+        dto.setBody(post.getBody());
+        var comments = commentsRepository.findByPostId(post.getId());
+        var commentsDto = comments.stream()
+                .map((comment) -> {
+                    var commentDto = new CommentDTO();
+                    commentDto.setBody(comment.getBody());
+                    commentDto.setId(comment.getId());
+                    return commentDto;
                 })
                 .toList();
-        return result;
+        dto.setComments(commentsDto);
+        return dto;
     }
 }
 // END
