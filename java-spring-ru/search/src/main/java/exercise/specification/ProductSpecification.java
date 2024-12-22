@@ -7,6 +7,7 @@ import exercise.dto.ProductParamsDTO;
 import exercise.model.Product;
 
 // BEGIN
+@Component
 public class ProductSpecification {
     public Specification<Product> build(ProductParamsDTO params) {
         return withCategoryId(params.getCategoryId())

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Page;
 
 import exercise.exception.ResourceNotFoundException;
 import exercise.repository.ProductRepository;
@@ -41,11 +42,12 @@ public class ProductsController {
 
     @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
-    public Page<ProductDTO> index(ProductParamsDTO params, @RequestParam(defaultValue = "1") int page) {
+    public List<ProductDTO> index(ProductParamsDTO params, @RequestParam(defaultValue = "1") int page) {
         var spec = specBuilder.build(params);
         var products = productRepository.findAll(spec, PageRequest.of(page - 1, 10));
         var result = products.map(productMapper::map);
-        return result;
+        return result.getContent();
+    }
     // END
 
     @PostMapping("")
